@@ -11,6 +11,9 @@ function setInitialCount() {
 function increment() {
   count++;
   setCount();
+  if (count > 10) {
+    alert("Stoppppppppppp");
+  }
 }
 
 setInitialCount();
