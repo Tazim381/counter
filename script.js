@@ -1,29 +1,10 @@
-function setInitialValue() {
-  document.getElementById("marks-inp").value = 0;
+
+
+function addElement() {
+
+   const data = document.getElementById("value").value;
+   const element = document.createElement('h1');
+   element.innerText = data;
+   const targetElement = document.getElementById("list");
+   targetElement.appendChild(element);
 }
-
-function calculateGrade() {
-  const marks = parseInt(document.getElementById("marks-inp").value);
-  
-  if (marks >= 80 && marks <= 100) {
-    document.getElementById("grade").innerText = "A+";
-  }
-  if(marks >=70 && marks <= 79) {
-    document.getElementById("grade").innerText="A";
-  }
-  if (marks >=60 && marks <= 69) {
-    document.getElementById("grade").innerText = "A-";
-  }
-  if(marks >=50 && marks <= 59) {
-    document.getElementById("grade").innerText="B";
-  }
-  if (marks >= 40 && marks <= 49) {
-    document.getElementById("grade").innerText = "C";
-  }
-  if(marks >=0 && marks <= 39) {
-    document.getElementById("grade").innerText="F";
-  }
-
-}
-
-setInitialValue();
