@@ -1,17 +1,14 @@
 
 "use strict";
 
+const itemText =[];
+
 function input() {
    const data = document.getElementById("value").value;
    return data;
 }
 function doesExists(data) {
-
-   const items = [...document.getElementsByTagName('h1')];
-   const item = items.find(function(item) {
-     return (item.innerText === data);
-   });
-   return Boolean(item);
+  return itemText.includes(data);
 }
 
 function createElement(data) {
@@ -21,17 +18,18 @@ function createElement(data) {
 }
 function addElement() {
 
-   const data = input();
-   if (data ==="") {
+   const inputItem = input();
+   if (inputItem ==="") {
       alert("Emty string ");
       return;
    }
-   if(doesExists(data)) {
+   if(doesExists(inputItem)) {
       alert("string already exists");
       return;
    }
-   const element = createElement(data);
- 
+   itemText.push(inputItem);
+   const element = createElement(inputItem);
+
    const targetElement = document.getElementById("list");
    targetElement.appendChild(element);
 }
